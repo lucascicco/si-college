@@ -6,7 +6,7 @@ Todo o programa foi escrito em inglês para manter as boas práticas de programa
 
 ### Comandos
 
-- `create` => Cria uma nova denúncia
+- `create` => Cria uma nova denúncia (Código, Data e Descrição)
 - `show` => Mostra todas denúncias
 - `exit` => Encerra a execução do programa
 
