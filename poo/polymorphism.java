@@ -1,3 +1,7 @@
+// Types of polymorphism
+// Static
+// Overwrite
+
 class Shapes {
   public void area() {
     System.out.println("The formula for area of ");

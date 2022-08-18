@@ -9,24 +9,24 @@ int main() {
   printf("Close program, type: exit\n");
 
   static Complaints complaints;
-  initComplaints(&complaints);
+  init_complaints(&complaints);
 
   while (true) {
     char input[5];
     scanf("%s", input);
 
     if (strcmp(input, "create") == 0) {
-      createComplaint(&complaints);
+      create_complaint(&complaints);
       continue;
     }
 
     if (strcmp(input, "show") == 0) {
-      showComplaints(&complaints);
+      show_complaints(&complaints);
       continue;
     }
 
     if (strcmp(input, "exit") == 0) {
-      removeComplaints(&complaints);
+      remove_complaints(&complaints);
       break;
     }
 

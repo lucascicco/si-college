@@ -1,5 +1,4 @@
 #include "utils.c"
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,46 +22,47 @@ typedef struct {
 } Complaints;
 
 // Initialization
-void initComplaints(Complaints *a) {
-  Complaint *complaint_pointer;
-  complaint_pointer = (Complaint *)malloc(sizeof(Complaint));
-  if (complaint_pointer != NULL) {
-    a->array = complaint_pointer;
+void init_complaints(Complaints *a) {
+  Complaint *p_complaint;
+  p_complaint = (Complaint *)malloc(sizeof(Complaint));
+  if (p_complaint != NULL) {
+    a->array = p_complaint;
     a->size = 0;
   } else {
     printf("Unable to allocate memory, exiting.\n");
-    free(complaint_pointer);
+    free(p_complaint);
     exit(0);
   }
 }
 
 // Remove
-void removeComplaints(Complaints *a) {
+void remove_complaints(Complaints *a) {
   free(a->array);
   a->array = NULL;
 }
 
 // Show
-void showComplaint(Complaint *r) {
+void show_complaint(Complaint *r) {
   printf("======= Complaint =======\n");
   printf("Code: %s \n", r->code);
   printf("Date of the occurrence: %d/%d/%d \n", r->date.day, r->date.month,
          r->date.year);
   printf("Description: %s \n", r->description);
-}
-void showComplaints(Complaints *a) {
+};
+
+void show_complaints(Complaints *a) {
   int index;
   printf("All complaints \nTotal %zu \n", a->size);
   for (index = 0; index < a->size; index++) {
     Complaint r = a->array[index];
-    showComplaint(&r);
+    show_complaint(&r);
   };
 }
 
-int checkComplaintIsNew(Complaints *a, char newCode[50]) {
+int check_complaint_is_new(Complaints *a, char newCode[50]) {
   int i;
   for (i = 0; i < a->size; i++) {
-    if (a->array[i].code == newCode) {
+    if (strcmp(a->array[i].code, newCode) == 0) {
       return 0;
     };
   };
@@ -70,13 +70,15 @@ int checkComplaintIsNew(Complaints *a, char newCode[50]) {
 };
 
 // Insertion
-void inputComplaint(Complaints *a, Complaint *r) {
-  bool mustInsertCode = true;
+void input_complaint(Complaints *a, Complaint *r) {
+  int mustInsertCode = 1;
   while (mustInsertCode) {
     printf("Insert the complaint's code \n");
-    scanf("%s", r->code);
-    if (checkComplaintIsNew(a, r->code)) {
-      mustInsertCode = false;
+    char newCode[50];
+    scanf("%s", newCode);
+    if (check_complaint_is_new(a, newCode)) {
+      mustInsertCode = 0;
+      strcpy(r->code, newCode);
     }
   }
   printf("Insert the occurrence's day, e.g: 14/07/2000 \n");
@@ -90,27 +92,28 @@ void inputComplaint(Complaints *a, Complaint *r) {
   printf("Insert the complaint's description, caracteres is limited to 255 \n");
   scanf("%s", r->description);
 }
-void insertComplaint(Complaints *a, Complaint *r) {
+void insert_complaint(Complaints *a, Complaint *r) {
   Complaint element;
   element = *r;
 
-  Complaint *complaint_pointer;
+  Complaint *p_complaint;
   a->size += 1;
-  complaint_pointer =
-      (Complaint *)realloc(a->array, a->size * sizeof(Complaint));
+  p_complaint = (Complaint *)realloc(a->array, a->size * sizeof(Complaint));
 
-  if (complaint_pointer != NULL) {
-    a->array = complaint_pointer;
+  if (p_complaint != NULL) {
+    a->array = p_complaint;
     a->array[a->size - 1] = element;
   } else {
     printf("Unable to reallocate memory, exiting.\n");
-    free(complaint_pointer);
+    free(p_complaint);
     exit(0);
   }
 }
-void createComplaint(Complaints *a) {
+void create_complaint(Complaints *a) {
   Complaint newComplaint;
-  inputComplaint(a, &newComplaint);
-  insertComplaint(a, &newComplaint);
+
+  input_complaint(a, &newComplaint);
+  insert_complaint(a, &newComplaint);
+
   printf("Complaint has been created successfully!\n");
 };
