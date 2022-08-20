@@ -1,6 +1,6 @@
 # Programação Estruturada | Portfólio | Denúncias
 
-Este diretório possui o código-fonte (source code) da resolução do desafio proposto da matéria de Programação Estruturada na faculdade ENIAC.
+Este diretório possui o código-fonte (source code) da resolução do desafio proposto da disciplina de Programação Estruturada na faculdade ENIAC.
 
 Todo o programa foi escrito em inglês para manter as boas práticas de programação, então vale lembrar que a tradução da palavra **Denúncia** é **Complaint**
 
