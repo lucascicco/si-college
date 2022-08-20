@@ -1,8 +1,8 @@
 package com.complaints;
 
 import java.util.Date;  
-import java.text.SimpleDateFormat;  
 import java.util.Scanner;
+import java.text.SimpleDateFormat;  
 
 public class Complaint {
   private String code;
@@ -42,9 +42,9 @@ public class Complaint {
     System.out.println("======= Complaint =======");
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     String formattedDate = dateFormat.format(this.date);
-    System.out.println("Code:" + this.code);
-    System.out.println("Date of the occurrence:" + formattedDate);
-    System.out.println("Description:" + this.description);
+    System.out.println("Code: " + this.code);
+    System.out.println("Date of the occurrence: " + formattedDate);
+    System.out.println("Description: " + this.description);
   }
 }
 

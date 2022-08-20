@@ -1,15 +1,14 @@
 package com.complaints;
 
+import com.complaints.Complaint;
+
 import java.util.Date;  
 import java.util.Scanner;
 import java.text.SimpleDateFormat;  
 import java.text.ParseException;
 
-import com.complaints.Complaint;
-
 public class ComplaintFactory {
-  public static Complaint build() {
-    Scanner reader = new Scanner(System.in);
+  public static Complaint build(Scanner reader) {
     System.out.println("Insert the complaint's code");
     String code = reader.next();
     System.out.println("Insert the occurrence's day, e.g: 14/07/2000");
@@ -22,7 +21,7 @@ public class ComplaintFactory {
         e.printStackTrace();
       }
     }
-    System.out.println("Insert the complaint's description, caracteres is limited to 255");
+    System.out.println("Insert the complaint's description");
     String description = reader.next();
     return new Complaint(code, date, description);
   }

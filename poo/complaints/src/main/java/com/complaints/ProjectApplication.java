@@ -1,10 +1,10 @@
 package com.complaints.main;
 
-import java.util.*;  
-
 import com.complaints.Complaint;
 import com.complaints.Complaints;
 import com.complaints.ComplaintFactory;
+
+import java.util.Scanner;  
 
 public class ProjectApplication {
 
@@ -23,7 +23,7 @@ public class ProjectApplication {
         case "create":
           boolean hasCreated = false;
           while (!hasCreated) {
-            Complaint newComplaint = ComplaintFactory.build();
+            Complaint newComplaint = ComplaintFactory.build(reader);
             hasCreated = complaints.addComplaint(newComplaint);
           }
           break;

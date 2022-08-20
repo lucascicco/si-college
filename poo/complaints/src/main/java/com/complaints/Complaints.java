@@ -1,10 +1,11 @@
 package com.complaints;
 
 import com.complaints.Complaint;
+
 import java.util.*;
 
 public class Complaints {
-  protected List<Complaint> complaints = new ArrayList<Complaint>();
+  protected ArrayList<Complaint> complaints = new ArrayList<Complaint>();
 
   private boolean checkComplaintIsNew(Complaint newComplaint) {
     Iterator<Complaint> iterate = this.complaints.iterator();
