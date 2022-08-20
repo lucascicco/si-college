@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Denúncias</string>
+    <string name="new_complaint">Registrar denúncia</string>
+    <string name="code_hint">Código</string>
+    <string name="date_hint">Data</string>
+    <string name="description_hint">Descrição</string>
+    <string name="btn_add_hint">Adicionar</string>
+    <string name="btn_add_date_hint">Adicionar data</string>
+    <string name="update">Atualizar</string>
+</resources>
