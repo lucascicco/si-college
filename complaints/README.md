@@ -10,7 +10,7 @@ Todo o programa foi escrito em inglês para manter as boas práticas de programa
 - `show` => Mostra todas denúncias
 - `exit` => Encerra a execução do programa
 
-### Testar em sua máquina
+### Testando em sua máquina
 
 Certifique-se de que o "cmake" esteja instalado em sua máquina, e execute:
 

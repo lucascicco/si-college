@@ -13,3 +13,4 @@ Semestre: Sexto
 ## Projetos
 
 - [Cadastro de Denúncias em C (Programação Estruturada)](./complaints)
+- [Cadastro de Denúncias em Java (POO)](./poo/complaints)
