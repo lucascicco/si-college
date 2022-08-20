@@ -8,7 +8,6 @@ import com.complaints.ComplaintFactory;
 
 public class ProjectApplication {
 
-
   public static void main(String[] args) {
     System.out.println("Create a complaint, type: create");
     System.out.println("Show complaints, type: show");
@@ -38,6 +37,8 @@ public class ProjectApplication {
           break;
       }
     }
+
     reader.close();
   }
+
 }
