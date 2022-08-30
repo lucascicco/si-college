@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Contabilex</string>
+    <string name="new_customer">Registrar cliente</string>
+    <string name="name_hint">Nome</string>
+    <string name="doc_hint">Documento</string>
+    <string name="description_hint">Descrição</string>
+    <string name="date_hint">Data</string>
+    <string name="btn_add_hint">Registrar</string>
+    <string name="btn_add_date_hint">Adicionar data</string>
+    <string name="update">Atualizar</string>
+</resources>
